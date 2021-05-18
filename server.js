@@ -1,9 +1,11 @@
 const express = require('express')
 const mailHandler = require('./utilities/mailer.js')
-
+const cors = require('cors')
 const app = express()
 
+
 app.use(express.json())
+app.use(cors())
 
 /*
 	company name/individual
