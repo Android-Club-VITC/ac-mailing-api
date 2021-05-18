@@ -18,7 +18,7 @@ const mailHandler = (data) => {
     }
   });
 
-  const msg = `Company Name:- ${company_name}\n\nSender Mail:- ${sender_email}\n\nContact: ${contact}\n\nSubject:- ${subject}\n\nProject Details:- ${project_details}\n\nApprox Budget:- ${approx_budget}\n\nApprox Timeline:- ${approx_timeline}\n\nOther Details:- ${other_details}`
+  const msg = `Company Name:- ${company_name}\n\nSender Mail:- ${sender_email}\n\nContact: ${contact}\n\nProject Details:- ${project_details}\n\nApprox Budget:- ${approx_budget}\n\nApprox Timeline:- ${approx_timeline}\n\nOther Details:- ${other_details}`
   
   var mailOptions = {
     from: sender_email,
