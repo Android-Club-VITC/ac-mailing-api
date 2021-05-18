@@ -19,7 +19,6 @@ app.use(cors())
 
 app.post('/api/sendmail',async (req,res)=>{
 	try{
-		console.log(req.body);
 		const response = await mailHandler(req.body);
 		if(response){
 			res.send({status: response});
