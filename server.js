@@ -1,6 +1,5 @@
 const express = require('express')
 const mailHandler = require('./utilities/mailer.js')
-require('dotenv').config();
 
 const app = express()
 
@@ -37,5 +36,7 @@ app.use('/api/sendmail',async (req,res)=>{
 	}	
 })
 
-app.listen(3000,()=>console.log("listening on 3000"));
+const port = process.env.PORT || 3000 
+
+app.listen(port,()=>console.log("listening on 3000"));
 
