@@ -15,28 +15,30 @@ app.use(express.json())
 	other details 
 */
 
-app.use('/api/sendmail',async (req,res)=>{
+app.post('/api/sendmail',async (req,res)=>{
 	try{
 		const response = await mailHandler(req.body);
 		if(response){
-			console.log("email sent");
 			res.send({status: response});
 		}
 		else{
-			console.log("email not sent");
 			res.status(400);
 			res.send();
 		}
 	}
 	catch(e){
 		console.log(e);
-		console.log("email not sent");
 		res.status(500);
 		res.send();
 	}	
 })
 
+app.use('*',(req,res)=>{
+	res.status(400);
+	res.send();
+})
+
 const port = process.env.PORT || 3000 
 
-app.listen(port,()=>console.log("listening on 3000"));
+app.listen(port,()=>console.log(`Listening at port ${port}`));
 
