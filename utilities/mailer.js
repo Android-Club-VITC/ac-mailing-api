@@ -2,10 +2,10 @@ var nodemailer = require('nodemailer');
 
 const mailHandler = (data) => {
   
-  const {company_name,sender_email,contact,subject,project_details,approx_budget,approx_timeline,other_details} = data
+  const {company_name,sender_email,contact,project_details,approx_budget,approx_timeline,other_details} = data
   
   if(typeof company_name== "undefined" || typeof sender_email== "undefined" || typeof contact== "undefined" 
-    || typeof subject== "undefined" || typeof project_details== "undefined" || typeof approx_budget== "undefined" 
+    || typeof project_details== "undefined" || typeof approx_budget== "undefined" 
     || typeof approx_timeline== "undefined" || typeof other_details== "undefined"){
     return false;
   }
