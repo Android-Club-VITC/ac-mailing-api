@@ -1,8 +1,11 @@
+require('dotenv').config()
+
 const express = require('express')
-const mailHandler = require('./utilities/mailer.js')
 const cors = require('cors')
 const app = express()
 
+const mailRoute = require('./routes/mailRoute')
+const newsletterRoute = require('./routes/newsletterRoute')
 
 app.use(express.json())
 app.use(cors())
@@ -17,25 +20,13 @@ app.use(cors())
 	other details 
 */
 
-app.post('/api/sendmail',async (req,res)=>{
-	try{
-		const response = await mailHandler(req.body);
-		if(response){
-			res.send({status: response});
-		}
-		else{
-			res.status(400);
-			res.send();
-		}
-	}
-	catch(e){
-		console.log(e);
-		res.status(500);
-		res.send();
-	}	
-})
+
+app.use('/api/mail',mailRoute);
+
+app.use('/api/newsletter',newsletterRoute);
 
 app.use('*',(req,res)=>{
+	console.log("here")
 	res.status(400);
 	res.send();
 })
