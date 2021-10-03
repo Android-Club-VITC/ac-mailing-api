@@ -1,14 +1,14 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const cors = require('cors')
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const app = express();
 
-const mailRoute = require('./routes/mailRoute')
-const newsletterRoute = require('./routes/newsletterRoute')
+const mailRoute = require("./routes/mailRoute");
+//const newsletterRoute = require("./routes/newsletterRoute");
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
 /*
 	company name/individual
@@ -20,18 +20,16 @@ app.use(cors())
 	other details 
 */
 
+app.use("/api/mail", mailRoute);
 
-app.use('/api/mail',mailRoute);
+//app.use('/api/newsletter',newsletterRoute);
 
-app.use('/api/newsletter',newsletterRoute);
+app.use("*", (req, res) => {
+  console.log("here");
+  res.status(400);
+  res.send();
+});
 
-app.use('*',(req,res)=>{
-	console.log("here")
-	res.status(400);
-	res.send();
-})
+const port = process.env.PORT || 3000;
 
-const port = process.env.PORT || 3000 
-
-app.listen(port,()=>console.log(`Listening at port ${port}`));
-
+app.listen(port, () => console.log(`Listening at port ${port}`));
