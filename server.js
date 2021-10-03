@@ -34,6 +34,10 @@ app.get("/static/image/:file",(req,res)=> {
 
 //app.use('/api/newsletter',newsletterRoute);
 
+app.get("/health", (req,res) => {
+	res.send("I am OK");
+});
+
 app.use("*", (req, res) => {
   console.log("here");
   res.status(400);
