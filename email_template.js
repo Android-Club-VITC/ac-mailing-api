@@ -14,7 +14,13 @@ const data = {
     
     "git-commit": {
         path: path.join(__dirname,"templates","git_commit.ejs"),
-        attachments: []
+        attachments: [
+            {
+                filename: "git_event.ics",
+                path: path.join(__dirname,"reminders","git_event.ics"),
+                cid: "git_event"         
+            }
+        ]
     }
 }
 
