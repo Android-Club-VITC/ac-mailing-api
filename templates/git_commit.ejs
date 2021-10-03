@@ -9,8 +9,8 @@
   <body style="margin: 0">
     <table
       style="
-        background-image: 'url(<%= path %>/static/image/git_bg.png)';
-        background-size: cover;
+        background-image: url('<%= path %>/static/image/git_bg.png');
+        background-size: contain;
         padding: 40px 20px;
         width: 100%;
       "
@@ -35,7 +35,7 @@
       </tr>
       <tr>
         <th>
-          <p
+          <div
             style="
               text-align: center;
               position: relative;
@@ -48,6 +48,7 @@
               box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
             "
           >
+            <i>
             Dear <%= name %>,<br />
             Thank you for registering for the workshop. Save this email for
             later reference.<br />
@@ -56,8 +57,8 @@
             Workshop date: 10th October 2021 <br />Workshop time: 2:00 PM - 4:00
             PM <br />Venue : Microsoft Teams Meeting link: <br />Teams code:
             <br />Operations Team @ Android Club VITC Kindly join the above link
-            on time. <br /><br />Happy learning,
-          </p>
+            on time. <br /><br />Happy learning,</i>
+        </div>
         </th>
       </tr>
       <tr>
