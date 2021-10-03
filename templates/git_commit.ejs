@@ -9,7 +9,7 @@
   <body style="margin: 0">
     <table
       style="
-        background-image: url(/static/image/git_bg.png);
+        background-image: 'url(<%= path %>/static/image/git_bg.png)';
         background-size: cover;
         padding: 40px 20px;
         width: 100%;
@@ -23,7 +23,7 @@
       <tr>
         <th>
           <img
-            src="/static/image/logo.png"
+            src="<%= path %>/static/image/logo.png"
             style="z-index: 5; width: 15vw; top: 10px; right: 5px"
             alt="background-img"
           />
@@ -62,7 +62,7 @@
       </tr>
       <tr>
         <img
-            src="/static/image/git_logo.png"
+            src="<%= path %>/static/image/git_logo.png"
             style="z-index: 5; width: 15vw; top: 10px; right: 5px"
             alt="background-img"
           />        

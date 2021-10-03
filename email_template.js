@@ -13,7 +13,7 @@ const data = {
     },
     
     "git-commit": {
-        path: path.join(__dirname,"templates","git_commit.html"),
+        path: path.join(__dirname,"templates","git_commit.ejs"),
         attachments: [
             {
                 filename: "logo.png",

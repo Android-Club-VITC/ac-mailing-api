@@ -18,8 +18,9 @@ router.post("/appRequest", async (req, res) => {
 });
 
 router.post("/feedback", async (req, res) => {
-  try {  
-    const response = await mailController.formFeedback(req.body);
+  try { 
+    const u = req.protocol + "://" + req.get('host'); 
+    const response = await mailController.formFeedback({...req.body, urlPath: u});
     if (response) {
       res.status(200).send();
     } else {
