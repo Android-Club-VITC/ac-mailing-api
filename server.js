@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -21,6 +21,16 @@ app.use(cors());
 */
 
 app.use("/api/mail", mailRoute);
+
+app.get("/static/image/:file",(req,res)=> {
+	try {
+		const {file} = req.params
+		res.sendFile(path.join("assets",file),{root: __dirname});
+	} catch(e) {
+		console.log(e);
+		res.status(400).send();
+	}
+});
 
 //app.use('/api/newsletter',newsletterRoute);
 

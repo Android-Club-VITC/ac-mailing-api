@@ -1,4 +1,5 @@
 const fs = require("fs");
+const ejs = require("ejs");
 const path = require("path");
 const { getEmailTransporter, mailOptions } = require("./mail_transporter");
 const emailTemplates = require("../email_template");
@@ -44,10 +45,10 @@ const mailController = {
     });
   },
 
-  formFeedback({ template, to, subject }) {
+  formFeedback({ template, to, subject, name}) {
     const filePath = emailTemplates[template].path;
-    const data = fs.readFileSync(filePath, "utf8");
-
+    let data = fs.readFileSync(filePath, "utf8");
+    data = ejs.render(data,{name})
     mailOptions.to = to;
     mailOptions.subject = subject;
     mailOptions.html = data;

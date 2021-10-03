@@ -9,7 +9,7 @@
   <body style="margin: 0">
     <table
       style="
-        
+        background-image: url(/static/image/git_bg.png);
         background-size: cover;
         padding: 40px 20px;
         width: 100%;
@@ -23,7 +23,7 @@
       <tr>
         <th>
           <img
-            src="cid:logo"
+            src="/static/image/logo.png"
             style="z-index: 5; width: 15vw; top: 10px; right: 5px"
             alt="background-img"
           />
@@ -48,7 +48,7 @@
               box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
             "
           >
-            Dear {Student Name},<br />
+            Dear <%= name %>,<br />
             Thank you for registering for the workshop. Save this email for
             later reference.<br />
             We've successfully received your registration for "GIT Commited" , a
@@ -59,6 +59,13 @@
             on time. <br /><br />Happy learning,
           </p>
         </th>
+      </tr>
+      <tr>
+        <img
+            src="/static/image/git_logo.png"
+            style="z-index: 5; width: 15vw; top: 10px; right: 5px"
+            alt="background-img"
+          />        
       </tr>
     </table>
   </body>
