@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body style="margin: 0">
-    <table
-      style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="margin: 0">
+  <table style="
         background-image: url('<%= path %>/static/image/git_bg.png');
         background-size: cover;
         padding: 40px 80px;
         width: 100%;
-      "
-    >
-      <!-- <img
+      ">
+    <!-- <img
       src="cid:git_bg"
       style="position: absolute; z-index: 1; height: 100vh; width: 100vw"
       alt="background-img"
     /> -->
-      <tr>
-        <th>
-          <img
-            src="<%= path %>/static/image/logo.png"
-            style="z-index: 5; width: 15vw; top: 10px; right: 5px"
-            alt="background-img"
-          />
-        </tr>
+    <tr>
+      <th>
+        <img src="<%= path %>/static/image/logo.png" style="z-index: 5; width: 15vw; top: 10px; right: 5px"
+          alt="background-img" />
+    </tr>
     </th>
-      <tr>
-        <th>
-            <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NHJob2ZudjdrODFuYjVoMmNjcGgxcWJxMWwgY19rZzFpYmtsNHBpcHRkYWUxdTV1OHZlc2k3MEBn&amp;tmsrc=c_kg1ibkl4piptdae1u5u8vesi70%40group.calendar.google.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>        </th>
-      </tr>
-      <tr>
-        <th
-        style="color: black;padding: 30px 30px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);">
-          <div>
-            <code>
+    <tr>
+      <th>
+        <a target="_blank"
+          href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NHJob2ZudjdrODFuYjVoMmNjcGgxcWJxMWwgY19rZzFpYmtsNHBpcHRkYWUxdTV1OHZlc2k3MEBn&amp;tmsrc=c_kg1ibkl4piptdae1u5u8vesi70%40group.calendar.google.com"><img
+            border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+      </th>
+    </tr>
+    <tr>
+      <th style="color: black;padding: 30px 30px;background-color: white;padding: 40px;border-radius: 10px;box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);">
+          <code>
             <h2>  
             Dear <%= name %>,<br /><br />
             Thank you for registering for the workshop.
@@ -49,16 +47,13 @@
             <br />
             Meeting link: <a href="https://teams.microsoft.com/l/channel/19%3aCosNAuN51nscoEUx6gJKT2_9Ah3I-IAzFw1Jsp8lIFM1%40thread.tacv2/General?groupId=d6b6b826-7869-4119-9546-49159cb37acd&tenantId=d4963ce2-af94-4122-95a9-644e8b01624d" target="_blank">Link</a><br />
             on time. <br /><br />Happy learning.</h2></code>
-        </div>
-        </th>
-      </tr>
-      <tr>
-        <img
-            src="<%= path %>/static/image/git_logo.png"
-            style="z-index: 5; width: 15vw; top: 10px; right: 5px"
-            alt="background-img"
-          />        
-      </tr>
-    </table>
-  </body>
+      </th>
+    </tr>
+    <tr>
+      <img src="<%= path %>/static/image/git_logo.png" style="z-index: 5; width: 15vw; top: 10px; right: 5px"
+        alt="background-img" />
+    </tr>
+  </table>
+</body>
+
 </html>
