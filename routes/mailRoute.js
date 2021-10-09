@@ -32,4 +32,18 @@ router.post("/feedback", async (req, res) => {
   }
 });
 
+router.post("/text", async (req, res) => {
+  try { 
+    const response = await mailController.textEmail(req.body);
+    if (response) {
+      res.status(200).send();
+    } else {
+      res.status(400).send();
+    }
+  } catch (e) {
+    console.log(e);
+    res.status(500).send();
+  }
+});
+
 module.exports = router;

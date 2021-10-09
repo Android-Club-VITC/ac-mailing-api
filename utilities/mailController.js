@@ -45,17 +45,34 @@ const mailController = {
     });
   },
 
-  formFeedback({ template, to, subject, name, urlPath}) {
+  formFeedback({ template, to, subject, name, urlPath }) {
     const filePath = emailTemplates[template].path;
     let data = fs.readFileSync(filePath, "utf8");
-    data = ejs.render(data,{name,path: urlPath})
+    data = ejs.render(data, { name, path: urlPath });
     mailOptions.to = to;
     mailOptions.subject = subject;
     mailOptions.html = data;
     mailOptions.attachments = emailTemplates[template].attachments;
-    
+
     return new Promise((resolve, reject) => {
       getEmailTransporter().sendMail(mailOptions, function (error, info) {
+        if (error) {
+          reject(false);
+        } else {
+          resolve(true);
+        }
+      });
+    });
+  },
+
+  textEmail({ to, subject, text }) {
+    let options = { ...mailOptions };
+    options.to = to;
+    options.subject = subject;
+    options.text = text;
+
+    return new Promise((resolve, reject) => {
+      getEmailTransporter().sendMail(options, function (error, info) {
         if (error) {
           reject(false);
         } else {
@@ -67,4 +84,3 @@ const mailController = {
 };
 
 module.exports = mailController;
-  
