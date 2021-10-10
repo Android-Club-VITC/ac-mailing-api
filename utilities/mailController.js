@@ -65,6 +65,33 @@ const mailController = {
     });
   },
 
+  certificate({ template, to, subject, urlPath,filename }) {
+    const filePath = emailTemplates[template].path;
+    let data = fs.readFileSync(filePath, "utf8");
+    data = ejs.render(data, { path: urlPath });
+    mailOptions.to = to;
+    mailOptions.subject = subject;
+    mailOptions.html = data;
+    const cert = path.join(emailTemplates[template].filePath,filename);
+    mailOptions.attachments = [
+      {
+        filename: "certificate.jpg",
+        path: cert,
+        cid: "certificate"
+      }
+    ]
+    
+    return new Promise((resolve, reject) => {
+      getEmailTransporter().sendMail(mailOptions, function (error, info) {
+        if (error) {
+          reject(false);
+        } else {
+          resolve(true);
+        }
+      });
+    });
+  },
+
   textEmail({ to, subject, text }) {
     let options = { ...mailOptions };
     options.to = to;
