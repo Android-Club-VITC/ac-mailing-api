@@ -18,7 +18,7 @@ const getAccessToken = () => {
 };
 
 const mailOptions = {
-  from: "androidclub@vit.ac.in",
+  from: "team.ac.vitc@gmail.com",
   generateTextFromHTML: true,
 };
 
