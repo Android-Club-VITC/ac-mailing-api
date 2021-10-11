@@ -28,7 +28,7 @@ function getEmailTransporter() {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: "androidclub@vit.ac.in",
+      user: "team.ac.vitc@gmail.com",
       clientId: process.env.GCP_CLIENT_ID,
       clientSecret: process.env.GCP_CLIENT_SECRET,
       refreshToken: process.env.GCP_AUTH_RF,
