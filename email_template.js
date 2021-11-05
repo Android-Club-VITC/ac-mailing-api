@@ -26,6 +26,11 @@ const data = {
     "git-commit-conclude": {
         path: path.join(__dirname,"templates","git_commit_conclude.ejs"),
         filePath: path.join(__dirname,"certificates","git_committed"),
+    },
+
+    "revelation-register": {
+        path: path.join(__dirname,"templates","revelation_register.ejs"),
+        attachments: []
     }
 }
 

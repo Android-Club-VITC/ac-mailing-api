@@ -45,10 +45,10 @@ const mailController = {
     });
   },
 
-  formFeedback({ template, to, subject, name, urlPath }) {
+  formFeedback({ template, to, subject, template_variables }) {
     const filePath = emailTemplates[template].path;
     let data = fs.readFileSync(filePath, "utf8");
-    data = ejs.render(data, { name, path: urlPath });
+    data = ejs.render(data, { ...template_variables });
     mailOptions.to = to;
     mailOptions.subject = subject;
     mailOptions.html = data;

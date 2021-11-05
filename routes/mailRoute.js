@@ -19,8 +19,9 @@ router.post("/appRequest", async (req, res) => {
 
 router.post("/feedback", async (req, res) => {
   try { 
-    const u = req.protocol + "://" + req.get('host'); 
-    const response = await mailController.formFeedback({...req.body, urlPath: u});
+    const u = req.protocol + "://" + req.get('host');
+    const template_variables = { ...req.body?.template_variables, path: u } 
+    const response = await mailController.formFeedback({...req.body, template_variables});
     if (response) {
       res.status(200).send();
     } else {
